@@ -1,0 +1,12 @@
+freeplay_icon_fade_time = 15
+freeplay_guitar_scroll_pill_scale = (0.7, 0.7)
+freeplay_guitar_scroll_pill_pos = (0.0, 75.0)
+freeplay_guitar_select_pill_scale = (0.7, 0.7)
+freeplay_guitar_select_pill_pos = (0.0, 35.0)
+freeplay_drum_scroll_pill_scale = (0.7, 0.7)
+freeplay_drum_scroll_pill_pos = (0.0, 75.0)
+freeplay_drum_select_pill_scale = (0.7, 0.7)
+freeplay_drum_select_pill_pos = (0.0, 35.0)
+0xba4f7ad9 = 460
+0x16085506 = (0.0, 60.0)
+0x7bc7f613 = (0.0, -75.0)

@@ -1,0 +1,8 @@
+
+script ui_create_select_outfit_style 
+	select_outfit_create_style_menu
+endscript
+
+script ui_destroy_select_outfit_style 
+	destroy_select_style_menu
+endscript

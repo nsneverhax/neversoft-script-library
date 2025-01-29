@@ -1,0 +1,8 @@
+spanishfly_guitar_markers_text_0ba80f80 = qs(0xc8e8e77f)
+spanishfly_guitar_markers_text_9ce03baa = qs(0x177f70f2)
+spanishfly_guitar_markers_text_1091caef = qs(0x56502612)
+spanishfly_guitar_markers_text_e811e4ee = qs(0x32111676)
+spanishfly_guitar_markers_text_be4e5eb9 = qs(0x9a4a64fd)
+spanishfly_guitar_markers_text_1f1722eb = qs(0x8c44d1ad)
+spanishfly_guitar_markers_text_47afa14e = qs(0x51f8020c)
+spanishfly_guitar_markers_text_c6ebe6db = qs(0x6c5532eb)

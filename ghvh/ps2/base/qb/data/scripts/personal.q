@@ -1,0 +1,3 @@
+
+script startup 
+endscript

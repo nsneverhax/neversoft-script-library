@@ -1,0 +1,12 @@
+ps3_autosave_warning_shown = 0
+memcard_state_active = 0
+memcard_boot_process = false
+autolaunch_jam_skip_memcard = 0
+MemcardDoneScript = nullscript
+MemcardRetryScript = nullscript
+MemcardSavingOrLoading = saving
+MemcardSuccess = false
+MemcardController = $primary_controller
+MemcardSigningIn = false
+MemcardJamOrDefault = Default
+MemcardInvalFolderOnFail = true

@@ -1,0 +1,8 @@
+pain_guitar_markers_text_e5fa3adf = qs(0x085b59c2)
+pain_guitar_markers_text_c85c2953 = qs(0x0c658976)
+pain_guitar_markers_text_2d081960 = qs(0x179ef303)
+pain_guitar_markers_text_8a5eb8e7 = qs(0x42318d5a)
+pain_guitar_markers_text_515578e9 = qs(0x2748dab5)
+pain_guitar_markers_text_9687f060 = qs(0x4874e3de)
+pain_guitar_markers_text_f0fffbee = qs(0x2b4356ef)
+pain_guitar_markers_text_2652487f = qs(0x3e53ebf4)

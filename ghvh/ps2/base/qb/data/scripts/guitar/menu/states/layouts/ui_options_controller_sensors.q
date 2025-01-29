@@ -1,0 +1,8 @@
+
+script ui_create_options_controller_sensors 
+	create_guitar_sensors_calibration_menu <...>
+endscript
+
+script ui_destroy_options_controller_sensors 
+	destroy_guitar_sensors_calibration_menu
+endscript

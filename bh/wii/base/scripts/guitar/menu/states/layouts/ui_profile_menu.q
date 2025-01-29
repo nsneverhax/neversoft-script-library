@@ -1,0 +1,8 @@
+
+script ui_create_profile_menu 
+	create_enter_profile_name_menu
+endscript
+
+script ui_destroy_profile_menu 
+	destroy_enter_profile_name_menu
+endscript

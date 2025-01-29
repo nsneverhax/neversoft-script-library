@@ -1,0 +1,17 @@
+ghtunes_submission_agreement_array = [
+	qs(0xb07682f2)
+	qs(0x7b7fd447)
+	qs(0x1bfbab10)
+	qs(0xf5715e1e)
+	qs(0x1946259f)
+	qs(0x0af12544)
+	qs(0xcde37eea)
+	qs(0x02683e9f)
+	qs(0xef7e421a)
+	qs(0xccd715be)
+	qs(0x4cafa3a6)
+	qs(0x5641af21)
+	qs(0x1c91ec4c)
+	qs(0x3cee1f2f)
+	qs(0x1cb99841)
+]

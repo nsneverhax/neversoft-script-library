@@ -1,0 +1,1 @@
+tut_vox_hype_guitar_markers_text_fe9fe76c = qs(0xff69a1b3)

@@ -1,0 +1,8 @@
+satchboogie_guitar_markers_text_f356fc54 = qs(0x6cc0724f)
+satchboogie_guitar_markers_text_45a37065 = qs(0xd8953790)
+satchboogie_guitar_markers_text_dcaa21df = qs(0xf3b86453)
+satchboogie_guitar_markers_text_abad1149 = qs(0xeaa35512)
+satchboogie_guitar_markers_text_35c984ea = qs(0xa5e2c3d5)
+satchboogie_guitar_markers_text_42ceb47c = qs(0xbcf9f294)
+satchboogie_guitar_markers_text_dbc7e5c6 = qs(0x97d4a157)
+satchboogie_guitar_markers_text_6a5fadee = qs(0x47ed218c)

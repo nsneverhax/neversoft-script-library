@@ -1,0 +1,18 @@
+enable_debug = 0
+disallow_debug_missing_materials = 1
+excludefromscriptdebug = [
+	get_fullname_of_character
+	band_lobby_get_player_color
+	band_lobby_get_submenu_color
+	band_lobby_get_submenu_data
+	band_lobby_get_player_color
+	band_lobby_is_career_state
+	vocals_distribute_mics
+	vocals_get_num_mics
+	vocals_get_num_vocalists_onscreen
+	vocals_get_num_mics
+	vocals_mic_distribution_is_valid
+	is_roadie_battle_mode
+	get_fullname_for_player
+]
+g_show_qa_debug_overlay = 0

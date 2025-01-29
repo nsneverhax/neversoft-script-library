@@ -1,0 +1,15 @@
+create_newspaper_menu = 0x24d8810d
+destroy_newspaper_menu = 0x24d8810d
+np_scroll_text_horizontal = 0x24d8810d
+np_create_text = 0x24d8810d
+np_create_options_menu = 0x24d8810d
+np_scroll_down = 0x24d8810d
+np_scroll_up = 0x24d8810d
+scale_textblock = 0x24d8810d
+np_2p_hilite_sections = 0x24d8810d
+np_set_section_color = 0x24d8810d
+np_2p_flap_wings = 0x24d8810d
+np_2p_thumb_zoom = 0x24d8810d
+np_2p_fade_to_grey = 0x24d8810d
+np_2p_hilites_p1 = 0x24d8810d
+np_2p_hilites_p2 = 0x24d8810d

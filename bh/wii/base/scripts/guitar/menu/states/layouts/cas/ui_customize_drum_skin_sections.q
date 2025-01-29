@@ -1,0 +1,163 @@
+cas_drum_skin_sections = [
+	{
+		text = qs(0x5e898d21)
+		parts = [
+			None
+			gh5_skin_ld46
+			bass_skin_ds_37
+			0x32a853bf
+			bass_skin_ds_02
+			gh5_skin_ld49
+			0xa57a8a37
+			bass_skin_ds_75
+			bandlogosingle
+			bass_skin_ds_32
+			bass_skin_ds_24
+			bass_skin_ds_38
+			0xc2d0c7cb
+			0x5cb45268
+			gh5_skin_ld66
+			gh5_skin_ld40
+			gh5_skin_ld61
+			gh5_skin_ld65
+		]
+	}
+	{
+		text = qs(0x153dcbdb)
+		parts = [
+			None
+			gh5_skin_ld68
+			gh5_skin_ld10
+			gh5_skin_ld54
+			0xb5d7f75d
+			gh5_skin_ld19
+			bass_skin_gk_08
+			bass_skin_ds_77
+			0xdbcbf68a
+			gh5_skin_ld45
+			bass_skin_ds_80
+			gh5_skin_ld42
+			gh5_skin_ld57
+			gh5_skin_ld22
+			bass_skin_ds_40
+			bass_skin_gk_04
+			gh5_skin_ld97
+			bass_skin_ds_47
+			0xd27dbaa1
+			gh5_skin_ld08
+		]
+	}
+	{
+		text = qs(0xb496f490)
+		parts = [
+			None
+			bass_skin_ds_01
+			gh5_skin_ld51
+			gh5_skin_ld07
+			bass_skin_ds_30
+			bass_skin_ds_43
+			bass_skin_ds_27
+			gh5_skin_ld31
+			bass_skin_ds_19
+			gh5_skin_ld33
+			gh5_skin_ld41
+			gh5_skin_ld53
+			bass_skin_ds_03
+			bass_skin_ds_29
+			bass_skin_ds_78
+			gh5_skin_ld38
+			gh5_skin_ld09
+			bass_skin_ds_07
+			bass_skin_ds_90
+			0x42c2a730
+			gh5_skin_ld11
+		]
+	}
+	{
+		text = qs(0xc373e779)
+		parts = [
+			None
+			bass_skin_ds_11
+			bass_skin_gk_03
+			0xb2ba3344
+			bass_skin_rm_05
+			gh5_skin_ld100
+			gh5_skin_ld94
+			gh5_skin_ld98
+			gh5_skin_ld44
+			gh5_skin_ld20
+			bass_skin_ds_79
+			gh5_skin_ld15
+			bass_skin_ds_74
+			bass_skin_ds_25
+			bass_skin_ds_28
+			gh5_skin_ld92
+			gh5_skin_ld21
+			gh5_skin_ld56
+			bass_skin_ds_13
+			bass_skin_ds_55
+			bass_skin_ds_12
+			0x45af6329
+		]
+	}
+	{
+		text = qs(0xdc2775a6)
+		parts = [
+			None
+			gh5_skin_ld50
+			gh5_skin_ld101
+			bass_skin_ds_81
+			bass_skin_ds_61
+			gh5_skin_ld39
+			gh5_skin_ld47
+			gh5_skin_ld48
+			gh5_skin_ld59
+			gh5_skin_ld103
+			0x35c597a6
+			gh5_skin_ld32b
+			0xc5bd03d2
+			bass_skin_ds_20
+			gh5_skin_ld21b
+			gh5_skin_ld63
+			0x2bb362fe
+			gh5_skin_ld52
+			gh5_skin_ld12
+			gh5_skin_ld37
+			bass_skin_ds_22
+		]
+	}
+	{
+		text = qs(0xe6d275ec)
+		parts = [
+			None
+			gh5_skin_ld34
+			bass_skin_ds_76
+			bass_skin_ds_23
+			gh5_skin_ld16
+			0xdca63293
+			gh5_skin_ld93
+			bass_skin_ds_21
+			gh5_skin_ld28
+			gh5_skin_ld43
+			bass_skin_ds_08
+			bass_skin_gk_02
+			bass_skin_ds_48
+			gh5_skin_ld99
+			gh5_skin_ld102
+			gh5_skin_ld18
+			bass_skin_gk_01
+			gh5_skin_ld90
+			bass_skin_ds_63
+			bass_skin_ds_84
+		]
+	}
+	{
+		text = qs(0x086c055d)
+		parts = [
+			None
+			bass_skin_ds_pork1
+			bass_skin_ds_pork2
+			bass_skin_ds_pork3
+		]
+	}
+]

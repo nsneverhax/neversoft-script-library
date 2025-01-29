@@ -1,0 +1,8 @@
+today_perf2_guitar_markers_text_e5fa3adf = qs(0x085b59c2)
+today_perf2_guitar_markers_text_c5cccaf7 = qs(0xaf49e8b8)
+today_perf2_guitar_markers_text_c85c2953 = qs(0x0c658976)
+today_perf2_guitar_markers_text_5cc59b4d = qs(0x8464bb7b)
+today_perf2_guitar_markers_text_515578e9 = qs(0x2748dab5)
+today_perf2_guitar_markers_text_f0fffbee = qs(0x2b4356ef)
+today_perf2_guitar_markers_text_2652487f = qs(0x3e53ebf4)
+today_perf2_guitar_markers_text_535a6c99 = qs(0xe22fc835)

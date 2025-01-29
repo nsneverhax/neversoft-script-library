@@ -1,0 +1,15 @@
+drum_fill_default_tom2_velocity = 100
+drum_fill_default_snare_velocity = 100
+drum_fill_default_hihat_velocity = 100
+drum_fill_default_tom1_velocity = 100
+drum_fill_default_crash_velocity = 100
+drum_fill_default_kick_velocity = 100
+drum_star_power_grace_period = 250
+drum_miss_stream_fade_in_time = 4.0
+drum_miss_stream_fade_in_dur = 2.0
+drum_sustain_max_gap = 250.0
+drum_sustain_double_max_gap = 400.0
+drum_accent_score_mult = 1.5
+drum_kick_score_mult = 1.5
+drum_orange_cymbal_score_mult = 1.2
+drum_fill_score_per_hit = 1

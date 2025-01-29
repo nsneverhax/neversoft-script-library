@@ -1,0 +1,5 @@
+cathedral_guitar_markers_text_d8c945ca = qs(0x0dbe99c2)
+cathedral_guitar_markers_text_5b0fd25d = qs(0x3a25554d)
+cathedral_guitar_markers_text_ce7af191 = qs(0x905fe622)
+cathedral_guitar_markers_text_c2009d9d = qs(0x8f38874e)
+cathedral_guitar_markers_text_fe9fe76c = qs(0x00167369)

@@ -1,0 +1,8 @@
+goodgod_guitar_markers_text_e5fa3adf = qs(0x085b59c2)
+goodgod_guitar_markers_text_c5cccaf7 = qs(0xaf49e8b8)
+goodgod_guitar_markers_text_c85c2953 = qs(0x0c658976)
+goodgod_guitar_markers_text_5cc59b4d = qs(0x8464bb7b)
+goodgod_guitar_markers_text_515578e9 = qs(0x2748dab5)
+goodgod_guitar_markers_text_9687f060 = qs(0x4874e3de)
+goodgod_guitar_markers_text_2652487f = qs(0x3e53ebf4)
+goodgod_guitar_markers_text_eda21fe1 = qs(0x249404f8)

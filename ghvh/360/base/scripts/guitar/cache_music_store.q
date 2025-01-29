@@ -1,0 +1,11 @@
+default_music_store_image_cache_size_xenon = 3778560
+default_music_store_sound_cache_size_xenon = 3686400
+default_music_store_image_cache_size_ps3 = 31488
+default_music_store_sound_cache_size_ps3 = 3072
+default_music_store_max_file_requests = 300
+default_music_store_image_size_xenon = 46080
+default_music_store_image_size_ps3 = 384
+default_music_store_image_vram_size = 46080
+default_music_store_sound_size_xenon = 307200
+default_music_store_sound_size_ps3 = 256
+default_music_store_sound_vram_size = 307200

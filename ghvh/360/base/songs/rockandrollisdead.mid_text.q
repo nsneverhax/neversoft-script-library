@@ -1,0 +1,8 @@
+rockandrollisdead_guitar_markers_text_695e8fa1 = qs(0x9727a41c)
+rockandrollisdead_guitar_markers_text_86df8a05 = qs(0x79bdc7ad)
+rockandrollisdead_guitar_markers_text_c5cccaf7 = qs(0xaf49e8b8)
+rockandrollisdead_guitar_markers_text_c85c2953 = qs(0x0c658976)
+rockandrollisdead_guitar_markers_text_5cc59b4d = qs(0x8464bb7b)
+rockandrollisdead_guitar_markers_text_515578e9 = qs(0x2748dab5)
+rockandrollisdead_guitar_markers_text_f0fffbee = qs(0x2b4356ef)
+rockandrollisdead_guitar_markers_text_eda21fe1 = qs(0x249404f8)

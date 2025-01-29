@@ -1,0 +1,11 @@
+make_fixed_menu = 0x24d8810d
+destroy_fixed_menu = 0x24d8810d
+fixed_menu_reset_tags = 0x24d8810d
+add_fixed_menu_item = 0x24d8810d
+fixed_menu_item_focus = 0x24d8810d
+fixed_menu_item_unfocus = 0x24d8810d
+finish_fixed_menu = 0x24d8810d
+fixed_menu_scroll = 0x24d8810d
+fixed_menu_reposition = 0x24d8810d
+fixed_menu_morph = 0x24d8810d
+fixed_menu_item_morph = 0x24d8810d

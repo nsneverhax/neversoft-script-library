@@ -1,0 +1,9 @@
+
+script ui_create_practice_select_difficulty 
+	ui_create_select_difficulty_spawned
+endscript
+
+script ui_destroy_practice_select_difficulty 
+	create_loading_screen
+	ui_destroy_select_difficulty
+endscript

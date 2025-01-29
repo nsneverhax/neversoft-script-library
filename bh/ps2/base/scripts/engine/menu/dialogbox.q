@@ -1,0 +1,13 @@
+create_snazzy_dialog_box = 0x24d8810d
+0x7ac5a92b = 0x24d8810d
+button_choose_script = 0x24d8810d
+create_dialog_button = 0x24d8810d
+0x4eafa3ac = 0x24d8810d
+dialog_box_exit = 0x24d8810d
+dialog_box_delay_input = 0x24d8810d
+speech_box_exit = 0x24d8810d
+speech_box_input_debounce = 0x24d8810d
+hide_speech_text = 0x24d8810d
+speech_box_style_scale_text = 0x24d8810d
+animate_dialog_box_in = 0x24d8810d
+create_test_dialog = 0x24d8810d

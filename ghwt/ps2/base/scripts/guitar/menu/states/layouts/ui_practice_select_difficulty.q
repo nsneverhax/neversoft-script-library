@@ -1,0 +1,8 @@
+
+script ui_create_practice_select_difficulty 
+	ui_create_select_difficulty_spawned \{0xc6fc2b2b}
+endscript
+
+script ui_destroy_practice_select_difficulty 
+	ui_destroy_select_difficulty
+endscript

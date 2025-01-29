@@ -1,0 +1,154 @@
+
+script ui_create_select_practice_instrument 
+	CreateScreenElement \{Type = descinterface
+		parent = root_window
+		id = practiceselectinstrumentinterface
+		desc = 'practice_menu_popup'
+		dims = (1280.0, 720.0)
+		just = [
+			left
+			top
+		]
+		Pos = (0.0, 0.0)
+		practice_head_text = qs(0xd667f733)}
+	if practiceselectinstrumentinterface :desc_resolvealias \{Name = alias_bkgd
+			param = practice_frame_add_id}
+		<practice_frame_add_id> :obj_spawnscript ui_shakey
+	else
+		ScriptAssert \{'pdetrich'}
+	endif
+	if practiceselectinstrumentinterface :desc_resolvealias \{Name = alias_bkgd
+			param = practice_frame_add_id}
+		<practice_frame_add_id> :obj_spawnscript ui_frazzmatazz
+	else
+		ScriptAssert \{'pdetrich'}
+	endif
+	practiceselectinstrumentinterface :desc_resolvealias \{Name = alias_menu}
+	AssignAlias id = <resolved_id> alias = current_menu
+	current_menu :se_setprops \{event_handlers = [
+			{
+				pad_back
+				generic_event_back
+			}
+		]}
+	CreateScreenElement \{Type = descinterface
+		parent = current_menu
+		desc = 'practice_menu_popup_item'
+		item_text = qs(0x9504b94a)
+		autosizedims = true
+		event_handlers = [
+			{
+				focus
+				practice_difficulty_focus
+			}
+			{
+				unfocus
+				practice_difficulty_unfocus
+			}
+			{
+				pad_choose
+				practice_choose_instrument
+				params = {
+					instrument = guitar
+				}
+			}
+		]}
+	create_2d_spring_system desc_id = <id> num_springs = 2 stiffness = 50 rest_length = 1
+	CreateScreenElement \{Type = descinterface
+		parent = current_menu
+		desc = 'practice_menu_popup_item'
+		item_text = qs(0x7d4f9214)
+		autosizedims = true
+		highlight_btn_alpha = 0
+		event_handlers = [
+			{
+				focus
+				practice_difficulty_focus
+			}
+			{
+				unfocus
+				practice_difficulty_unfocus
+			}
+			{
+				pad_choose
+				practice_choose_instrument
+				params = {
+					instrument = bass
+				}
+			}
+		]}
+	create_2d_spring_system desc_id = <id> num_springs = 2 stiffness = 50 rest_length = 1
+	add_user_control_helper \{text = qs(0xc18d5e76)
+		button = green}
+	add_user_control_helper \{text = qs(0xaf4d5dd2)
+		button = red}
+	LaunchEvent \{Type = focus
+		target = current_menu}
+endscript
+
+script ui_destroy_select_practice_instrument 
+	clean_up_user_control_helpers
+	if ScreenElementExists \{id = practiceselectinstrumentinterface}
+		DestroyScreenElement \{id = practiceselectinstrumentinterface}
+	endif
+endscript
+
+script practice_choose_instrument 
+	getfirstplayer
+	setplayerinfo <Player> part = <instrument>
+	get_progression_instrument_user_option part = <instrument> controller = <device_num> option = 'hyperspeed'
+	if (<user_option> != -1)
+		setplayerinfo <Player> cheat_hyperspeed_value = <user_option>
+	endif
+	generic_event_choose \{state = uistate_select_practice_difficulty}
+endscript
+
+script practice_setup_part_and_continue 
+	getcontrollertype controller = <device_num>
+	getfirstplayer
+	if (<controller_type> = guitar)
+		state = uistate_select_practice_instrument
+	elseif (<controller_type> = drum)
+		setplayerinfo <Player> part = drum
+		state = uistate_select_practice_difficulty
+	else
+		setplayerinfo <Player> part = vocals
+		state = uistate_select_practice_difficulty
+	endif
+	gman_songfunc \{func = get_current_song}
+	if load_song_from_sd_needed song_name = <current_song>
+		CreateScreenElement \{Type = ContainerElement
+			parent = root_window
+			id = practice_sd_eject_listener
+			event_handlers = [
+				{
+					sdcard_event
+					practice_sd_eject_back_to_songlist
+				}
+			]}
+	endif
+	vocals_distribute_mics
+	ui_event event = menu_change state = <state>
+endscript
+
+script practice_sd_eject_back_to_songlist 
+	ui_event_wait_for_safe
+	LaunchEvent \{Type = unfocus
+		target = current_menu}
+	wii_dlc_get_error_text \{error_crc = cntsd_result_sd_ejected}
+	create_dialog_box {
+		no_background
+		heading_text = qs(0x79597197)
+		dlg_z_priority = 1500
+		body_text = <error_text>
+		options = [
+			{
+				func = practice_error_loading_destroy_dialog
+				text = qs(0x9bc5dae4)
+			}
+		]
+	}
+	if ScreenElementExists \{id = practice_sd_eject_listener}
+		DestroyScreenElement \{id = practice_sd_eject_listener}
+	endif
+endscript

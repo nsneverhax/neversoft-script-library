@@ -1,0 +1,29 @@
+reject_phrases = [
+	qs(0x4407b112)
+	qs(0xafef49ba)
+	qs(0x90d9d610)
+	qs(0x915fef5e)
+	qs(0x2663fc21)
+]
+reject_phrases_short = [
+	qs(0xafc9b5af)
+	qs(0x08e4de0f)
+	qs(0x169ad18d)
+	qs(0x7d8dd61d)
+	qs(0x0bd84bb0)
+	qs(0x56d20305)
+	qs(0xde298d42)
+	qs(0xe1e1d1d5)
+	qs(0x4783e7b7)
+]
+reject_phrases_full = [
+	qs(0xdc46195e)
+	qs(0x999a5c3b)
+	qs(0x86d682f6)
+	qs(0x9617d046)
+	qs(0x7ee9f264)
+	qs(0x8625cf0b)
+	qs(0x39eb063b)
+	qs(0x7a02eadd)
+	qs(0x4906899d)
+]
