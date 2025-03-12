@@ -1,0 +1,6 @@
+
+script ui_create_practice_select_difficulty 
+endscript
+
+script ui_destroy_practice_select_difficulty 
+endscript

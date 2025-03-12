@@ -1,0 +1,101 @@
+gp_fx_sd_dg_hita_sparks01 = {
+	pos = (41.472694, 0.0, 71.38865)
+	angles = (0.0, 0.0, 0.0)
+	class = particleobject
+	particletype = flexparticle
+	type = flat
+	active
+	createdatstart
+	attach
+	attachobject = guitarist
+	bone = bone_chest
+	emitrangedims = (6.0, 6.0, 3.0)
+	docircularemit
+	emit_target = (0.0, 1.0, 0.0)
+	emitangle = (0.0, 0.0, 0.0)
+	force = (0.0, -9.8, 0.0)
+	windcoeff = 0.0
+	localwindcoeff = 2.0
+	emittervelocityweight = 0.0
+	radiate
+	anglespread = 360.0
+	selectedwind = violentwind01
+	dragcoeff = 0.5
+	liferange = (0.8, 1.5)
+	emit_rate = 64.0
+	max = 0
+	timeseed = 0.3
+	lifetime = 0.0
+	emitnum = 160
+	followemitter = 0.0
+	emitfunction = sawtooth
+	emitperiod = 0.0
+	sizerange = [
+		(0.5, 0.5)
+		(0.2, 0.2)
+	]
+	speedrange = (8.0, 36.0)
+	turbulence = (0.0, 0.0, 0.0)
+	rotvel = (0.0, 0.0)
+	rotveltimescale = 0.0
+	emitdelaystart = 0.0
+	alignwithpath
+	pathfollowtime = 0.05
+	history = 2
+	historylistcoordinatespace = world
+	color = 1452212223
+	lod_default
+	quickmaterial = {
+		texturelayout = layout2x2
+		layoutn = 1
+		layoutm = 1
+		diffusetextureenabled
+		diffusetexture = ph_sparks_01
+		specularpower = 0
+		bloom
+		alphacutoff = 1
+		blendmode = add
+		softedge
+		softedgescale = 0.2
+		aoshadow = 0.0
+		quadanimationfps = 0
+		lightgroup = allgroups
+		fadeoutnearplane = 0.0
+		fadeoutdistance = 0.1
+	}
+	knot = [
+		(-1.010263, 0.0, -0.0)
+		(-1.010263, 0.0, -0.0)
+		(-0.797576, 0.0, -0.0)
+		(-0.584889, 0.0, -0.0)
+		(-0.372202, 0.0, -0.0)
+		(-0.15951501, 0.0, -0.0)
+		(0.053172, 0.0, -0.0)
+		(0.265859, 0.0, -0.0)
+		(0.54944104, 0.0, -0.0)
+		(0.833024, 0.0, -0.0)
+		(1.1166071, 0.0, -0.0)
+		(1.1166071, 0.0, -0.0)
+	]
+	particlecolor = [
+		-1
+		-1
+		-1
+		-1
+		-1
+		-1
+		-256
+		-256
+	]
+	burnpervertex = [
+		1.0
+		1.0
+		1.0
+		1.0
+	]
+	vertexweight = [
+		0.3
+		0.6
+		1.0
+	]
+}

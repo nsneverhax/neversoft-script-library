@@ -1,0 +1,8 @@
+
+script ui_create_options_controller_star_power 
+	create_star_power_trigger_calibration_menu <...>
+endscript
+
+script ui_destroy_options_controller_star_power 
+	destroy_star_power_trigger_calibration_menu
+endscript
