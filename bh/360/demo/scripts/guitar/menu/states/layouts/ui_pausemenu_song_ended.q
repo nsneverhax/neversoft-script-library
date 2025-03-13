@@ -1,0 +1,9 @@
+
+script ui_create_pausemenu_song_ended 
+	kill_intro_celeb_ui
+	create_song_ended_menu
+endscript
+
+script ui_destroy_pausemenu_song_ended 
+	destroy_song_ended_menu
+endscript

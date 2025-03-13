@@ -1,0 +1,8 @@
+prettyvacant_guitar_markers_text_dfeebe12 = qs(0xc3574541)
+prettyvacant_guitar_markers_text_c5cccaf7 = qs(0xaf49e8b8)
+prettyvacant_guitar_markers_text_c85c2953 = qs(0x0c658976)
+prettyvacant_guitar_markers_text_5cc59b4d = qs(0x8464bb7b)
+prettyvacant_guitar_markers_text_515578e9 = qs(0x2748dab5)
+prettyvacant_guitar_markers_text_2bc2abdb = qs(0x9d7f8a3a)
+prettyvacant_guitar_markers_text_2652487f = qs(0x3e53ebf4)
+prettyvacant_guitar_markers_text_ac502270 = qs(0xa2b532b8)

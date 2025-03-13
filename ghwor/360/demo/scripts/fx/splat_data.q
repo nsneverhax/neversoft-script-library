@@ -1,0 +1,3 @@
+
+script preallocsplats 
+endscript

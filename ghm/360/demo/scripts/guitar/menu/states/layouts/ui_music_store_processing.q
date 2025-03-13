@@ -1,0 +1,8 @@
+
+script ui_create_music_store_processing 
+	music_store_turn_on_processing
+endscript
+
+script ui_destroy_music_store_processing 
+	music_store_turn_off_processing
+endscript
