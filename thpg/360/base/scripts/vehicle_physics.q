@@ -1,0 +1,21 @@
+vehicle_stick_to_ground_offset = 0.35000002
+vehicle_initial_speed = 10.0
+vehicle_sliding_speed = 0.3
+vehicle_sliding_milliseconds = 2500
+vehicle_stopped_linear_damping = 0.0
+VehiclePhysics_Default = {
+	wheel0_friction = 5.0
+	wheel1_friction = 5.0
+	wheel2_friction = 2.0
+	wheel3_friction = 2.0
+	max_handbrake_speed = 0.01
+	gravity = -30.0
+	max_steering_angle = 45.0
+	accelerate_ramp_range = 10.0
+	brake_ramp_range = 2.0
+	min_brake = 0.0
+	engine_max_torque = 200.0
+	max_breaking_torque = 1000.0
+	extra_torque_factor = -0.5
+	max_steering_change_speed = 60.0
+}

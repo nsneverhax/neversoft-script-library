@@ -1,0 +1,3 @@
+
+script registerallanimevents 
+endscript

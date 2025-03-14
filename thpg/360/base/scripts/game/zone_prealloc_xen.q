@@ -1,0 +1,110 @@
+WWWZoneOrderXen = [
+	0
+	1
+	5
+	10
+	14
+	15
+	16
+	17
+	18
+	19
+	20
+	21
+	22
+	23
+	24
+	4
+	6
+	7
+	2
+	3
+	11
+	8
+	9
+	12
+	13
+]
+WWWZoneOrderXen_Address = [
+	0
+	0
+	802816
+	995328
+	172032
+	0
+	294912
+	413696
+	1388544
+	2703360
+	0
+	1122304
+	4485120
+	4485120
+	0
+	0
+	0
+	0
+	0
+	0
+	0
+	0
+	0
+	0
+	0
+]
+WWWZoneOrderXen_Size = [
+	6209536
+	802816
+	192512
+	126976
+	122880
+	172032
+	118784
+	974848
+	1314816
+	1781760
+	454656
+	475136
+	241664
+	122880
+	28672
+	868352
+	233472
+	1810432
+	307200
+	532480
+	17068032
+	7639040
+	10772480
+	4259840
+	1597440
+]
+WWWZoneOrderXen_BestSize = 17068032
+WWWZoneOrderXen_CRC = -1209304107
+WWWZoneOrderXen_Names = [
+	Z_S9_Start
+	z_school
+	z_ghetto
+	Z_Downtown
+	Z_City
+	z_harbor
+	z_lansdowne
+	z_mansion
+	z_monuments
+	z_museums
+	z_museum_int
+	z_pb_bridge
+	z_bw_bridge
+	z_wp_bridge
+	z_anim
+	z_testlevel
+	z_testlevel_a1
+	z_testlevel_a2
+	z_testlevel_gun
+	z_testlevel_mb
+	z_testlevel_js
+	z_mocap
+	z_bedroom
+	z_mainmenu
+	z_viewer
+]

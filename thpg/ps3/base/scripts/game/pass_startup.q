@@ -1,0 +1,6 @@
+
+script compositeobjectmanager_startup 
+	processorgroup_registerdefault
+	passgroup_registerdefault
+	compositeobjects_registerdefault
+endscript
