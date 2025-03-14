@@ -3690,7 +3690,7 @@ script do_join_invite_stuff
 		if (<invited_primary_controller> = true)
 			destroy_popup_warning_menu
 			setbuttoneventmappings \{block_menu_input}
-			change \{0x61bee052 = 1}
+			change \{keep_loading_screen = 1}
 			ui_event \{event = menu_replace
 				data = {
 					state = uistate_mainmenu

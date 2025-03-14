@@ -4602,7 +4602,7 @@ writetobuffer_compressionlookuptable_16 = [
 	`tex/models/characters/layers/cadrm/bass_skin_ds_83.img`
 	`tex/models/characters/layers/cag/pickgrd_body32_ld_01.img`
 	`tex/models/characters/layers/cag/pickgrd_body32_ld_04.img`
-	`tex\models\car_instruments\drums\bass_skin_ds_pork3.img`
+	`tex/models/car_instruments/drums/bass_skin_ds_pork3.img`
 	`tex\models\car_instruments\drums\drumshell_ds_pork7.img`
 	m_metl_acc_horn_primary
 	m_metl_acc_horn_hornbase
@@ -4983,8 +4983,8 @@ writetobuffer_compressionlookuptable_16 = [
 	`tex/models/characters/layers/car/female/makeup/car_female_makeup_lip12.img`
 	`tex/models/characters/layers/car/female/makeup/car_female_makeup_lip13.img`
 	`tex/models/characters/skater_male/decals/cag_sponsors_ernieball_01.img`
-	`tex\models\car_instruments\drums\bass_skin_ds_15a.img`
-	`tex\models\car_instruments\drums\drumshell_ds_pork1.img`
+	`tex/models/car_instruments/drums/bass_skin_ds_15a.img`
+	`tex/models/car_instruments/drums/drumshell_ds_pork1.img`
 	`tex\models\car_instruments\bass\cab_body_kelly_d_mls.img`
 	`tex\models\car_instruments\bass\cab_body_rubyat_d_mls.img`
 	`tex\models\car_instruments\bass\cab_body_sixtease01_d_mls.img`
@@ -5208,7 +5208,7 @@ writetobuffer_compressionlookuptable_16 = [
 	`tex\models\characters\layers\cag\esp\gtr62_esp_alexi_ld_01.img`
 	`tex\models\characters\layers\cag\esp\gtr62_esp_alexi_ld_02.img`
 	`tex\models\characters\layers\cag\esp\gtr62_esp_alexi_ld_03.img`
-	`tex\models\characters\layers\cag\esp\gtr62_esp_alexi_ld_04.img`
+	`tex/models/characters/layers/cag/esp/gtr62_esp_alexi_ld_04.img`
 	`tex\models\characters\layers\cag\esp\gtr62_esp_alexi_ld_05.img`
 	`tex\models\characters\layers\cag\esp\gtr62_esp_alexi_ld_06.img`
 	`tex\models\characters\layers\cag\esp\gtr62_esp_alexi_ld_07.img`
@@ -5665,7 +5665,7 @@ writetobuffer_compressionlookuptable_16 = [
 	`tex/models/characters/layers/cag/esp/gtr64_esp_pg1_ld_02.img`
 	`tex/models/characters/layers/cag/esp/gtr64_esp_pg2_ld_01.img`
 	`tex/models/characters/layers/cag/esp/gtr64_esp_pg2_ld_02.img`
-	`tex\models\car_instruments\bass\esp\bass9_esp_ax_d.img`
+	`tex/models/car_instruments/bass/esp/bass9_esp_ax_d.img`
 	`tex\models\characters\layers\cag\esp\gtr60_esp_ninja_ld_10.img`
 	`tex\models\characters\layers\cag\esp\gtr62_esp_alexi_ld_09.img`
 	bass1_bridge_5str_01
@@ -5904,8 +5904,8 @@ writetobuffer_compressionlookuptable_16 = [
 	`tex/models/characters/layers/cab/esp/bass64_neckhead_ld_03.img`
 	`tex/models/characters/layers/cab/esp/bass64_neckhead_ld_04.img`
 	`tex/models/characters/layers/cab/esp/bass_fretboard_inlay_02.img`
-	`tex\models\car_instruments\bass\esp\bass63_ex_d.img`
-	`tex\models\car_instruments\bass\esp\bass64_f405_d.img`
+	`tex/models/car_instruments/bass/esp/bass63_ex_d.img`
+	`tex/models/car_instruments/bass/esp/bass64_f405_d.img`
 	larsulrich_alt
 	m_metl_acc_lgauntlet
 	m_metl_acc_rgauntlet
@@ -6245,7 +6245,7 @@ writetobuffer_compressionlookuptable_16 = [
 	`tex/models/characters/layers/cab/esp/bass9_neckhead5_ld_01.img`
 	`tex/models/characters/layers/cab/esp/bass9_neckhead5_ld_02.img`
 	`tex/models/characters/layers/cag/esp/22frt_ld_06.img`
-	`tex\models\car_instruments\bass\esp\bass14_esp_surveyor_d.img`
+	`tex/models/car_instruments/bass/esp/bass14_esp_surveyor_d.img`
 	f_clsc_hat_triangle_primary
 	f_clsc_hat_triangle_secondary
 	f_clsc_hat_triangle_third
@@ -6270,7 +6270,7 @@ writetobuffer_compressionlookuptable_16 = [
 	`tex/models/characters/layers/cag/esp/gtr30_pinstripe01.img`
 	`tex/models/characters/layers/cag/esp/gtr30_h101_d.img`
 	`tex/models/characters/layers/cag/gtr30_h101_d.img`
-	`tex\models\characters\layers\cag\esp\gtr30_body_paint.img`
+	`tex/models/characters/layers/cag/esp/gtr30_body_paint.img`
 	bass17_bridge_4str_04
 	bass17_bridge_4str_04_primary
 	bass17_bridge_4str_05
@@ -6360,9 +6360,9 @@ writetobuffer_compressionlookuptable_16 = [
 	`tex/models/characters/layers/cag/esp/gtr63f_neckhead_ld_10.img`
 	`tex/models/characters/layers/cag/esp/gtr64_esp_f_ld_04.img`
 	`tex/models/characters/layers/cag/esp/gtr64_neckhead_ld_03.img`
-	`tex\models\car_instruments\bass\esp\bass17_esp_ec_d.img`
+	`tex/models/car_instruments/bass/esp/bass17_esp_ec_d.img`
 	`tex\models\characters\layers\cag\esp\gtr60_esp_ninja_ld_01b.img`
-	`tex\models\characters\layers\cag\esp\gtr62_esp_alexi_ld_10.img`
+	`tex/models/characters/layers/cag/esp/gtr62_esp_alexi_ld_10.img`
 	gtr65_pickup_dummy
 	gtr65_pickup_dummy_primary
 	gh5_lars
@@ -6621,9 +6621,9 @@ writetobuffer_compressionlookuptable_16 = [
 	`tex\models\characters\layers\cag\esp\gtr60_esp_ninja_ld_11.img`
 	`tex\models\characters\layers\cag\esp\gtr60_esp_ninja_ld_12.img`
 	`tex\models\characters\layers\cag\esp\gtr60_esp_ninja_ld_13.img`
-	`tex\models\characters\layers\cag\esp\gtr62_esp_alexi_ld_11.img`
-	`tex\models\characters\layers\cag\esp\gtr62_esp_alexi_ld_12.img`
-	`tex\models\characters\layers\cag\esp\gtr62_esp_alexi_ld_13.img`
+	`tex/models/characters/layers/cag/esp/gtr62_esp_alexi_ld_11.img`
+	`tex/models/characters/layers/cag/esp/gtr62_esp_alexi_ld_12.img`
+	`tex/models/characters/layers/cag/esp/gtr62_esp_alexi_ld_13.img`
 	bass18_esp_knob_10_04
 	bass18_esp_knob_10_primary
 	bass18_esp_scorched

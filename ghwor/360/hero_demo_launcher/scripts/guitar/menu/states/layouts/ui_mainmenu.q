@@ -1,4 +1,4 @@
-0x61bee052 = 0
+keep_loading_screen = 0
 
 script ui_create_mainmenu 
 	spawnscriptnow ui_create_mainmenu_spawned params = <...>
@@ -14,7 +14,7 @@ script ui_create_mainmenu_spawned
 	change \{respond_to_signin_changed_func = main_menu_signin_changed}
 	if ($invite_controller = -1)
 		printf \{'ui_create_mainmenu_spawned - NO INVITE'
-			channel = 0x37807f54}
+			channel = DEMOLAUNCHER}
 		change \{in_join_band_screens = 0}
 		change \{game_mode = p1_quickplay}
 		change \{current_num_players = 1}
@@ -44,10 +44,10 @@ script ui_create_mainmenu_spawned
 			c = $invite_controller}
 		reset_quickplay_song_list
 		unpausegame
-		if ($0x61bee052 = 1)
+		if ($keep_loading_screen = 1)
 			create_loading_screen
 			frontend_load_soundcheck \{async = 0}
-			change \{0x61bee052 = 0}
+			change \{keep_loading_screen = 0}
 		else
 			frontend_load_soundcheck \{loadingscreen
 				async = 0}

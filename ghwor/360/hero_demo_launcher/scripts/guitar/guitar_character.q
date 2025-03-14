@@ -1557,7 +1557,7 @@ script play_lose_anims_foreach
 				band_playsimpleanim {name = <checksum> anim = <lose_anim> blendduration = 0.3}
 				printf channel = animinfo 'Playing %a on %b' a = <lose_anim> b = <checksum> donotresolve
 			else
-				printf channel = animinfo qs(0x283913b7) a = <checksum>
+				printf channel = animinfo qs(str_m_c2_revman_scripts_39) a = <checksum>
 			endif
 		endif
 	endif

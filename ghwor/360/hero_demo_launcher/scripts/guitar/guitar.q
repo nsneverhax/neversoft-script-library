@@ -279,23 +279,23 @@ script print_loading_time
 	finalprintf qs(0x1d312485) a = <elapsedtime> t = <text>
 endscript
 
-script 0x03975c29 
+script IsEuropeBuild 
 	if isps3
-		return \{0x19f26901 = 0}
+		return \{is_europe_build = 0}
 	else
 		getterritory
 		if ((<territory> = territory_europe) || (<territory> = territory_undefined))
-			return \{0x19f26901 = 1}
+			return \{is_europe_build = 1}
 		else
-			return \{0x19f26901 = 0}
+			return \{is_europe_build = 0}
 		endif
 	endif
 endscript
 
 script guitar_startup 
 	change \{assertonmissingscripts = 1}
-	0x03975c29
-	if (<0x19f26901>)
+	IsEuropeBuild
+	if (<is_europe_build>)
 		legalscreen_name = 'boot_legal'
 		change \{bx_game_title = 'Greatest Hits'}
 		change \{bx_short_game_title = 'GH'}

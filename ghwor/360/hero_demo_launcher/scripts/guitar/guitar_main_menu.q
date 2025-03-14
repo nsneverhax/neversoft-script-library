@@ -1,5 +1,5 @@
 force_mainmenu_signin = 0
-0x582f33f9 = [
+GameBox_Props = [
 	{
 		alpha = 0
 		scale = (2.0, 2.0)
@@ -80,38 +80,38 @@ script create_main_menu_elements
 		tags = {
 			current_preview = none
 		}}
-	current_menu_anchor :obj_spawnscriptnow \{0x23fe67af}
-	if current_menu_anchor :desc_resolvealias \{name = 0x8196d1b1}
+	current_menu_anchor :obj_spawnscriptnow \{Background_Swap}
+	if current_menu_anchor :desc_resolvealias \{name = alias_Game_Scrolling_Menu}
 		assignalias id = <resolved_id> alias = scrolling_menu
 		scrolling_menu :se_setprops \{top_selection = true}
 	endif
-	if current_menu_anchor :desc_resolvealias \{name = 0x109627e0}
+	if current_menu_anchor :desc_resolvealias \{name = alias_Game_Menu}
 		assignalias id = <resolved_id> alias = current_menu
 		current_menu :se_setprops \{event_handlers = [
 				{
 					pad_up
-					0x17cc8dd7
+					GameBox_Animation
 					params = {
 						direction = right
 					}
 				}
 				{
 					pad_down
-					0x17cc8dd7
+					GameBox_Animation
 					params = {
 						direction = left
 					}
 				}
 				{
 					pad_left
-					0x17cc8dd7
+					GameBox_Animation
 					params = {
 						direction = right
 					}
 				}
 				{
 					pad_right
-					0x17cc8dd7
+					GameBox_Animation
 					params = {
 						direction = left
 					}
@@ -146,28 +146,28 @@ script create_main_menu_elements
 				}
 				{
 					pad_up
-					0x6f9d6496
+					BX_Video_Attract_Reset
 				}
 				{
 					pad_down
-					0x6f9d6496
+					BX_Video_Attract_Reset
 				}
 				{
 					pad_left
-					0x6f9d6496
+					BX_Video_Attract_Reset
 				}
 				{
 					pad_right
-					0x6f9d6496
+					BX_Video_Attract_Reset
 				}
 			]}
-		current_menu_anchor :desc_resolvealias \{name = 0x54f059a1}
-		assignalias id = <resolved_id> alias = 0x8c8c965f
-		getscreenelementchildren \{id = 0x8c8c965f}
+		current_menu_anchor :desc_resolvealias \{name = alias_Anim_Container}
+		assignalias id = <resolved_id> alias = Anim_Container
+		getscreenelementchildren \{id = Anim_Container}
 		acc = <children>
-		0x95185f8d
-		getarraysize \{$0x9bb9f9d7}
-		i = $0x48ad7e7f
+		BX_SetLauncherGamesArray
+		getarraysize \{$Launcher_Games_Array}
+		i = $game_array_offset
 		begin
 		if (<i> >= <array_size>)
 			i = (<i> - <array_size>)
@@ -179,23 +179,23 @@ script create_main_menu_elements
 			break
 		endif
 		repeat
-		0x6fdeebff = <array_size>
-		if (<0x6fdeebff> < 4)
-			0x6fdeebff = 4
+		num_loop = <array_size>
+		if (<num_loop> < 4)
+			num_loop = 4
 		endif
 		begin
-		0x1d991286 = (($0x9bb9f9d7) [<i>])
-		if ((($<0x1d991286>).0x8ba1e7d9) = movie)
+		curr_game = (($Launcher_Games_Array) [<i>])
+		if ((($<curr_game>).ContentType) = movie)
 			event_handlers = [
 				{focus mainmenu_item_focus}
 				{unfocus mainmenu_item_unfocus}
-				{pad_choose 0x39b65d66 params = {0x1d991286 = <0x1d991286>}}
+				{pad_choose BX_play_video params = {curr_game = <curr_game>}}
 			]
 		else
 			event_handlers = [
 				{focus mainmenu_item_focus}
 				{unfocus mainmenu_item_unfocus}
-				{pad_choose 0x5d55d294}
+				{pad_choose BX_start_demo}
 			]
 		endif
 		createscreenelement {
@@ -207,21 +207,21 @@ script create_main_menu_elements
 			scale = (1.0, 1.0)
 			event_handlers = <event_handlers>
 			tags = {
-				0x1d991286 = <0x1d991286>
+				curr_game = <curr_game>
 			}
 		}
-		0xe377ad34 = (<acc> [<i>])
-		<0xe377ad34> :se_setprops {
-			0x28851fe1 = (($g_menu_colors).0x4b1beb1c)
+		curr_gamebox = (<acc> [<i>])
+		<curr_gamebox> :se_setprops {
+			GameBox_rgba = (($g_menu_colors).GameBox_greyed_out)
 		}
 		i = (<i> + 1)
 		if (<i> = <array_size>)
 			i = 0
 		endif
-		repeat <0x6fdeebff>
+		repeat <num_loop>
 	endif
-	getarraysize \{$0x9bb9f9d7}
-	i = $0x48ad7e7f
+	getarraysize \{$Launcher_Games_Array}
+	i = $game_array_offset
 	begin
 	if (<i> >= <array_size>)
 		i = (<i> - <array_size>)
@@ -234,30 +234,30 @@ script create_main_menu_elements
 	endif
 	repeat
 	j = 0
-	0x6fdeebff = <array_size>
-	if (<0x6fdeebff> < 4)
-		0x6fdeebff = 4
+	num_loop = <array_size>
+	if (<num_loop> < 4)
+		num_loop = 4
 	endif
 	begin
-	0x1d991286 = (($0x9bb9f9d7) [<i>])
-	0xe377ad34 = (<acc> [<j>])
-	<0xe377ad34> :se_setprops {
-		0xe9cc5b29 = (($<0x1d991286>).0x7598abf0)
+	curr_game = (($Launcher_Games_Array) [<i>])
+	curr_gamebox = (<acc> [<j>])
+	<curr_gamebox> :se_setprops {
+		GameBox_texture = (($<curr_game>).GameBox)
 	}
 	i = (<i> - 1)
 	if (<i> < 0)
 		i = (<array_size> - 1)
 	endif
 	j = (<j> + 1)
-	repeat <0x6fdeebff>
-	current_menu_anchor :desc_resolvealias \{name = 0x54f059a1}
+	repeat <num_loop>
+	current_menu_anchor :desc_resolvealias \{name = alias_Anim_Container}
 	getscreenelementchildren id = <resolved_id>
-	0xa11da1a3 = (<children> [($0x898a1331)])
-	<0xa11da1a3> :obj_spawnscriptnow 0x54a4a614
-	if ($0x4380f73c = 1)
-		runscriptonscreenelement \{0xc759f565
+	focussed_gamebox = (<children> [($focussed_child)])
+	<focussed_gamebox> :obj_spawnscriptnow GameBox_Glow_Anim
+	if ($BX_Attract_Enabled = 1)
+		runscriptonscreenelement \{BX_Video_Attract_Wait
 			id = current_menu}
-		runscriptonscreenelement \{0xe728e90c
+		runscriptonscreenelement \{BX_Video_Attract_Input
 			id = current_menu}
 	endif
 endscript
@@ -265,8 +265,8 @@ endscript
 script mainmenu_item_focus 
 	se_getparentid
 	<parent_id> :gettags
-	getarraysize \{$0x9bb9f9d7}
-	i = $0x48ad7e7f
+	getarraysize \{$Launcher_Games_Array}
+	i = $game_array_offset
 	begin
 	if (<i> >= <array_size>)
 		i = (<i> - <array_size>)
@@ -278,24 +278,24 @@ script mainmenu_item_focus
 		break
 	endif
 	repeat
-	0x55cd0e3d = (<tag_selected_index> + <i>)
+	arrayIndex = (<tag_selected_index> + <i>)
 	begin
-	if (<0x55cd0e3d> >= <array_size>)
-		0x55cd0e3d = (<0x55cd0e3d> - <array_size>)
+	if (<arrayIndex> >= <array_size>)
+		arrayIndex = (<arrayIndex> - <array_size>)
 	endif
-	if (<0x55cd0e3d> < 0)
-		0x55cd0e3d = 0
+	if (<arrayIndex> < 0)
+		arrayIndex = 0
 	endif
-	if (<0x55cd0e3d> < <array_size>)
+	if (<arrayIndex> < <array_size>)
 		break
 	endif
 	repeat
-	0x6fdeebff = <array_size>
-	if (<0x6fdeebff> < 4)
-		0x6fdeebff = 4
+	num_loop = <array_size>
+	if (<num_loop> < 4)
+		num_loop = 4
 	endif
-	0x1d991286 = (($0x9bb9f9d7) [<0x55cd0e3d>])
-	getarraysize (($<0x1d991286>).songs)
+	curr_game = (($Launcher_Games_Array) [<arrayIndex>])
+	getarraysize (($<curr_game>).songs)
 	if (<array_size> > 4)
 		num_songs = 4
 	else
@@ -307,20 +307,20 @@ script mainmenu_item_focus
 	formattext checksumname = song_text 'Song_%a_text' a = <i>
 	formattext checksumname = artist_text 'Artist_%b_text' b = <i>
 	if (<i> <= <num_songs>)
-		addparam structure_name = text_props name = <song_text> value = (($<0x1d991286>).songs [(<i> -1)])
-		addparam structure_name = text_props name = <artist_text> value = (($<0x1d991286>).artists [(<i> -1)])
+		addparam structure_name = text_props name = <song_text> value = (($<curr_game>).songs [(<i> -1)])
+		addparam structure_name = text_props name = <artist_text> value = (($<curr_game>).artists [(<i> -1)])
 	else
 		addparam structure_name = text_props name = <song_text> value = qs(0x00000000)
 		addparam structure_name = text_props name = <artist_text> value = qs(0x00000000)
 	endif
 	<i> = (<i> + 1)
-	repeat <0x6fdeebff>
+	repeat <num_loop>
 	current_menu_anchor :se_setprops <text_props>
 	current_menu_anchor :se_setprops {
-		game_title_text = (($<0x1d991286>).0x1f8c884c)
+		game_title_text = (($<curr_game>).GameDescription)
 	}
-	spawnscriptnow 0x46f3f511 params = {0x1d991286 = <0x1d991286>}
-	spawnscriptnow 0xf971ea91 params = {0x1d991286 = <0x1d991286>}
+	spawnscriptnow BX_video_preview params = {curr_game = <curr_game>}
+	spawnscriptnow BX_update_helper_pills params = {curr_game = <curr_game>}
 endscript
 
 script mainmenu_item_unfocus 
@@ -328,47 +328,47 @@ script mainmenu_item_unfocus
 	<parent_id> :gettags
 endscript
 
-script 0xf971ea91 
+script BX_update_helper_pills 
 	requireparams \{[
-			0x1d991286
+			curr_game
 		]
 		all}
 	clean_up_user_control_helpers
-	if ((($<0x1d991286>).0x8ba1e7d9) = movie)
+	if ((($<curr_game>).ContentType) = movie)
 		add_user_control_helper \{text = qs(0x4ff85c08)
 			button = green
 			z = 10
 			all_buttons
-			0xdfe0a18c = 0}
-	elseif ((($<0x1d991286>).0x8ba1e7d9) = 0x29bd205f)
+			override_body_alpha_to = 0}
+	elseif ((($<curr_game>).ContentType) = demo)
 		add_user_control_helper \{text = qs(0xcdaa4ea8)
 			button = green
 			z = 10
 			all_buttons
-			0xdfe0a18c = 0}
+			override_body_alpha_to = 0}
 	endif
 endscript
-0xbf6bcade = 0
+Index_Offset = 0
 anim_time = 0.2
-0x898a1331 = 0
+focussed_child = 0
 
-script 0x17cc8dd7 
+script GameBox_Animation 
 	requireparams \{[
 			direction
 		]
 		all}
 	setbuttoneventmappings \{block_menu_input}
-	current_menu_anchor :desc_resolvealias \{name = 0x54f059a1}
-	assignalias id = <resolved_id> alias = 0x8c8c965f
-	getscreenelementchildren \{id = 0x8c8c965f}
+	current_menu_anchor :desc_resolvealias \{name = alias_Anim_Container}
+	assignalias id = <resolved_id> alias = Anim_Container
+	getscreenelementchildren \{id = Anim_Container}
 	acc = <children>
 	getarraysize <acc>
-	0x4b6701eb = <array_size>
-	getarraysize \{$0x9bb9f9d7}
-	0xf3b204b8 = <array_size>
+	ACCAS = <array_size>
+	getarraysize \{$Launcher_Games_Array}
+	GAAR = <array_size>
 	current_menu :gettags
-	getarraysize \{$0x9bb9f9d7}
-	tag_selected_index = (<tag_selected_index> + $0x48ad7e7f)
+	getarraysize \{$Launcher_Games_Array}
+	tag_selected_index = (<tag_selected_index> + $game_array_offset)
 	begin
 	if (<tag_selected_index> >= <array_size>)
 		tag_selected_index = (<tag_selected_index> - <array_size>)
@@ -381,190 +381,190 @@ script 0x17cc8dd7
 	endif
 	repeat
 	if (<direction> = left)
-		if NOT (($0x898a1331) = 0)
-			change 0x898a1331 = ($0x898a1331 - 1)
+		if NOT (($focussed_child) = 0)
+			change focussed_child = ($focussed_child - 1)
 		else
-			change 0x898a1331 = (<0x4b6701eb> - 1)
+			change focussed_child = (<ACCAS> - 1)
 		endif
-		gamma = ((<0x4b6701eb> - 1) - ($0xbf6bcade))
-		if NOT (($0xbf6bcade) = (<0x4b6701eb> - 1))
-			change 0xbf6bcade = (($0xbf6bcade) + 1)
+		gamma = ((<ACCAS> - 1) - ($Index_Offset))
+		if NOT (($Index_Offset) = (<ACCAS> - 1))
+			change Index_Offset = (($Index_Offset) + 1)
 		else
-			change \{0xbf6bcade = 0}
+			change \{Index_Offset = 0}
 		endif
-		if NOT (<tag_selected_index> = (<0xf3b204b8> - 1))
-			0x8322fe50 = (<tag_selected_index> + 1)
+		if NOT (<tag_selected_index> = (<GAAR> - 1))
+			GameBox_Index = (<tag_selected_index> + 1)
 		else
-			0x8322fe50 = 0
+			GameBox_Index = 0
 		endif
-		0x1d991286 = ($0x9bb9f9d7 [<0x8322fe50>])
-		0xe377ad34 = (<acc> [<gamma>])
-		<0xe377ad34> :se_setprops {
-			0xe9cc5b29 = (($<0x1d991286>).0x7598abf0)
+		curr_game = ($Launcher_Games_Array [<GameBox_Index>])
+		curr_gamebox = (<acc> [<gamma>])
+		<curr_gamebox> :se_setprops {
+			GameBox_texture = (($<curr_game>).GameBox)
 		}
 	elseif (<direction> = right)
-		if NOT (($0x898a1331) = (<0x4b6701eb> - 1))
-			change 0x898a1331 = ($0x898a1331 + 1)
+		if NOT (($focussed_child) = (<ACCAS> - 1))
+			change focussed_child = ($focussed_child + 1)
 		else
-			change \{0x898a1331 = 0}
+			change \{focussed_child = 0}
 		endif
-		if NOT (($0xbf6bcade) = 0)
-			change 0xbf6bcade = (($0xbf6bcade) - 1)
+		if NOT (($Index_Offset) = 0)
+			change Index_Offset = (($Index_Offset) - 1)
 		else
-			change 0xbf6bcade = (<0x4b6701eb> - 1)
+			change Index_Offset = (<ACCAS> - 1)
 		endif
-		gamma = ((<0x4b6701eb> - (($0xbf6bcade) + 1)) + 4)
-		if (<gamma> > (<0x4b6701eb> - 1))
-			gamma = (<gamma> - <0x4b6701eb>)
+		gamma = ((<ACCAS> - (($Index_Offset) + 1)) + 4)
+		if (<gamma> > (<ACCAS> - 1))
+			gamma = (<gamma> - <ACCAS>)
 		endif
-		0x8322fe50 = (<tag_selected_index> - 4)
-		if (<0x8322fe50> < 0)
-			0x8322fe50 = (<0x8322fe50> + 4)
+		GameBox_Index = (<tag_selected_index> - 4)
+		if (<GameBox_Index> < 0)
+			GameBox_Index = (<GameBox_Index> + 4)
 		endif
-		0x1d991286 = ($0x9bb9f9d7 [<0x8322fe50>])
-		0xe377ad34 = (<acc> [<gamma>])
-		<0xe377ad34> :se_setprops {
-			0xe9cc5b29 = (($<0x1d991286>).0x7598abf0)
+		curr_game = ($Launcher_Games_Array [<GameBox_Index>])
+		curr_gamebox = (<acc> [<gamma>])
+		<curr_gamebox> :se_setprops {
+			GameBox_texture = (($<curr_game>).GameBox)
 		}
 	endif
 	i = 0
 	begin
-	delta = (($0xbf6bcade) + <i>)
-	if (<delta> > (<0x4b6701eb> - 1))
-		delta = (<delta> - <0x4b6701eb>)
+	delta = (($Index_Offset) + <i>)
+	if (<delta> > (<ACCAS> - 1))
+		delta = (<delta> - <ACCAS>)
 	endif
-	if NOT (<delta> = (<0x4b6701eb> - 1))
-		0xf3b0d3d3 = ($0x582f33f9 [(<delta> + 1)])
+	if NOT (<delta> = (<ACCAS> - 1))
+		anim_props = ($GameBox_Props [(<delta> + 1)])
 	else
-		0xf3b0d3d3 = ($0x582f33f9 [0])
+		anim_props = ($GameBox_Props [0])
 	endif
-	0xe377ad34 = (<acc> [<i>])
-	if NOT (<i> = ($0x898a1331))
-		<0xe377ad34> :se_setprops {
+	curr_gamebox = (<acc> [<i>])
+	if NOT (<i> = ($focussed_child))
+		<curr_gamebox> :se_setprops {
 			time = ($anim_time)
 			anim = linear
-			pos = (<0xf3b0d3d3>.pos)
-			alpha = (<0xf3b0d3d3>.alpha)
-			scale = (<0xf3b0d3d3>.scale)
-			z_priority = (<0xf3b0d3d3>.z)
-			0x28851fe1 = (($g_menu_colors).0x4b1beb1c)
-			0xe4b28524 = 0
+			pos = (<anim_props>.pos)
+			alpha = (<anim_props>.alpha)
+			scale = (<anim_props>.scale)
+			z_priority = (<anim_props>.z)
+			GameBox_rgba = (($g_menu_colors).GameBox_greyed_out)
+			GameBox_Glow_alpha = 0
 		}
 	else
-		<0xe377ad34> :se_setprops {
+		<curr_gamebox> :se_setprops {
 			time = ($anim_time)
 			anim = linear
-			pos = (<0xf3b0d3d3>.pos)
-			alpha = (<0xf3b0d3d3>.alpha)
-			scale = (<0xf3b0d3d3>.scale)
-			z_priority = (<0xf3b0d3d3>.z)
-			0x28851fe1 = (($g_menu_colors).0xe2b2766d)
-			0xe4b28524 = 0.8
+			pos = (<anim_props>.pos)
+			alpha = (<anim_props>.alpha)
+			scale = (<anim_props>.scale)
+			z_priority = (<anim_props>.z)
+			GameBox_rgba = (($g_menu_colors).GameBox_focussed)
+			GameBox_Glow_alpha = 0.8
 		}
 	endif
 	i = (<i> + 1)
-	repeat <0x4b6701eb>
-	if scriptisrunning \{0x54a4a614}
-		killspawnedscript \{name = 0x54a4a614}
+	repeat <ACCAS>
+	if scriptisrunning \{GameBox_Glow_Anim}
+		killspawnedscript \{name = GameBox_Glow_Anim}
 	endif
 	wait (($anim_time) * 0.75) second
-	0xa11da1a3 = (<acc> [($0x898a1331)])
-	<0xa11da1a3> :obj_spawnscriptnow 0x54a4a614
+	focussed_gamebox = (<acc> [($focussed_child)])
+	<focussed_gamebox> :obj_spawnscriptnow GameBox_Glow_Anim
 	setbuttoneventmappings \{unblock_menu_input}
 endscript
 
-script 0x23fe67af 
+script Background_Swap 
 	begin
 	se_setprops \{time = 0.55
-		0x72b1f185 = 1
-		0xd4c6fa31 = 0}
+		Background_2_alpha = 1
+		Background_3_alpha = 0}
 	wait \{0.6
 		seconds}
 	se_setprops \{time = 0.55
-		0x72b1f185 = 0
-		0xd4c6fa31 = 1}
+		Background_2_alpha = 0
+		Background_3_alpha = 1}
 	wait \{0.6
 		seconds}
 	se_setprops \{time = 0.55
-		0x72b1f185 = 0
-		0xd4c6fa31 = 0}
+		Background_2_alpha = 0
+		Background_3_alpha = 0}
 	wait \{0.6
 		seconds}
 	repeat
 endscript
 
-script 0x54a4a614 
+script GameBox_Glow_Anim 
 	wait ($anim_time) second
 	se_setprops {
-		0x28851fe1 = (($g_menu_colors).0xe2b2766d)
-		0xe4b28524 = 0.7
+		GameBox_rgba = (($g_menu_colors).GameBox_focussed)
+		GameBox_Glow_alpha = 0.7
 	}
 	begin
-	se_setprops \{0xe4b28524 = 0.5
+	se_setprops \{GameBox_Glow_alpha = 0.5
 		time = 0.55}
 	wait \{0.8
 		seconds}
-	se_setprops \{0xe4b28524 = 0.8
+	se_setprops \{GameBox_Glow_alpha = 0.8
 		time = 0.25}
 	wait \{0.8
 		seconds}
 	repeat
 endscript
-0xf54f5034 = 0
-0xe825afcc = 0
+Video_Attract_Must_Pause = 0
+Current_Attract = 0
 
-script 0xc759f565 
+script BX_Video_Attract_Wait 
 	setspawninstancelimits \{max = 1
 		management = kill_oldest}
-	wait_time = ($0x8e81c1aa)
+	wait_time = ($BX_Default_Attract_Time)
 	begin
-	0xc890cbcb = <wait_time>
+	cur_time = <wait_time>
 	begin
-	printf qs(0xc2723725) i = <0xc890cbcb> channel = 0x37807f54
-	if (<0xc890cbcb> = 0)
+	printf qs(0xc2723725) i = <cur_time> channel = DEMOLAUNCHER
+	if (<cur_time> = 0)
 		printf \{qs(0x9f12cd2b)
-			channel = 0x37807f54}
+			channel = DEMOLAUNCHER}
 		waitformovieloop \{textureslot = 1}
-		obj_killspawnedscript \{name = 0xe728e90c}
+		obj_killspawnedscript \{name = BX_Video_Attract_Input}
 		break
 	endif
 	wait \{1
 		second
 		ignoreslomo}
-	if ($0xf54f5034 = 0)
-		0xc890cbcb = (<0xc890cbcb> - 1)
+	if ($Video_Attract_Must_Pause = 0)
+		cur_time = (<cur_time> - 1)
 	else
-		0xc890cbcb = <wait_time>
+		cur_time = <wait_time>
 	endif
 	repeat
 	current_menu :gettags
-	getarraysize \{$0x9bb9f9d7}
-	0xed1a8183 = (<tag_selected_index> + $0x48ad7e7f)
+	getarraysize \{$Launcher_Games_Array}
+	currentIndex = (<tag_selected_index> + $game_array_offset)
 	begin
-	if (<0xed1a8183> >= <array_size>)
-		0xed1a8183 = (<0xed1a8183> - <array_size>)
+	if (<currentIndex> >= <array_size>)
+		currentIndex = (<currentIndex> - <array_size>)
 	endif
-	if (<0xed1a8183> < 0)
-		0xed1a8183 = 0
+	if (<currentIndex> < 0)
+		currentIndex = 0
 	endif
-	if (<0xed1a8183> < <array_size>)
+	if (<currentIndex> < <array_size>)
 		break
 	endif
 	repeat
-	i = (<0xed1a8183> + 1)
-	change \{0x268807fc = 0}
-	change \{0x05866133 = 1}
+	i = (<currentIndex> + 1)
+	change \{BX_Attract_Interrupted = 0}
+	change \{BX_In_Attract_Mode = 1}
 	begin
 	if (<i> >= <array_size>)
 		i = 0
 	endif
-	current = (($0x9bb9f9d7) [<i>])
-	printf qs(0x8f5ce990) s = <current> channel = 0x37807f54
-	change 0xe825afcc = <i>
-	if NOT screenelementexists \{id = 0xc6a6863a}
+	current = (($Launcher_Games_Array) [<i>])
+	printf qs(0x8f5ce990) s = <current> channel = DEMOLAUNCHER
+	change Current_Attract = <i>
+	if NOT screenelementexists \{id = BX_Black_Screen}
 		createscreenelement \{type = spriteelement
 			parent = root_window
-			id = 0xc6a6863a
+			id = BX_Black_Screen
 			desc = 'GameBox_Item'
 			dims = (1600.0, 1200.0)
 			pos = (-200.0, -100.0)
@@ -580,13 +580,13 @@ script 0xc759f565
 			]
 			z_priority = 500}
 	endif
-	0x39b65d66 0x1d991286 = <current>
-	if ($0x268807fc = 1)
-		change \{0x05866133 = 0}
-		change \{0x268807fc = 0}
-		destroyscreenelement \{id = 0xc6a6863a}
-		0x1d991286 = (($0x9bb9f9d7) [<0xed1a8183>])
-		spawnscriptnow 0x46f3f511 params = {0x1d991286 = <0x1d991286>}
+	BX_play_video curr_game = <current>
+	if ($BX_Attract_Interrupted = 1)
+		change \{BX_In_Attract_Mode = 0}
+		change \{BX_Attract_Interrupted = 0}
+		destroyscreenelement \{id = BX_Black_Screen}
+		curr_game = (($Launcher_Games_Array) [<currentIndex>])
+		spawnscriptnow BX_video_preview params = {curr_game = <curr_game>}
 		break
 	endif
 	i = (<i> + 1)
@@ -596,13 +596,13 @@ script 0xc759f565
 	repeat
 endscript
 
-script 0xe728e90c \{button1 = {
+script BX_Video_Attract_Input \{button1 = {
 		}
 		button2 = {
 		}}
 	wait \{30
 		gameframes}
-	get_handlers_for_all_buttons \{event_script = 0x6f9d6496}
+	get_handlers_for_all_buttons \{event_script = BX_Video_Attract_Reset}
 	begin
 	removeparameter \{makes}
 	removeparameter \{device_num}
@@ -612,16 +612,16 @@ script 0xe728e90c \{button1 = {
 	repeat
 endscript
 
-script 0x6f9d6496 
-	if ($0x4380f73c = 1)
-		killspawnedscript \{name = 0xc759f565}
+script BX_Video_Attract_Reset 
+	if ($BX_Attract_Enabled = 1)
+		killspawnedscript \{name = BX_Video_Attract_Wait}
 		printf \{qs(0xd6010d61)
-			channel = 0x37807f54}
+			channel = DEMOLAUNCHER}
 		wait \{30
 			gameframes}
 		begin
-		if NOT scriptisrunning \{0xc759f565}
-			runscriptonscreenelement \{0xc759f565
+		if NOT scriptisrunning \{BX_Video_Attract_Wait}
+			runscriptonscreenelement \{BX_Video_Attract_Wait
 				id = current_menu}
 			break
 		endif
@@ -631,67 +631,67 @@ script 0x6f9d6496
 	endif
 endscript
 
-script 0x6e229336 
+script BX_Get_Localized_Video_Rating 
 	requireparams \{[
-			0x38588519
+			game_struct
 		]
 		all}
-	0x4e5b06b1 = none
-	0x03975c29
-	if (<0x19f26901>)
+	MovieToPlay = none
+	IsEuropeBuild
+	if (<is_europe_build>)
 		getlocale
 		if ((<locale> != locale_united_kingdom) && (<locale> != locale_germany))
-			0x4e5b06b1 = ((<0x38588519>).0xe54aad28)
+			MovieToPlay = ((<game_struct>).PEGI)
 		endif
 	else
-		0x4e5b06b1 = ((<0x38588519>).esrb)
+		MovieToPlay = ((<game_struct>).esrb)
 	endif
-	return 0x4e5b06b1 = <0x4e5b06b1>
+	return MovieToPlay = <MovieToPlay>
 endscript
 
-script 0x8377b203 
+script BX_Get_Localized_Video 
 	requireparams \{[
-			0x38588519
+			game_struct
 		]
 		all}
-	0x4e5b06b1 = ((<0x38588519>).0x350839e4)
+	MovieToPlay = ((<game_struct>).GameVideo)
 	if french
-		if structurecontains \{structure = 0x38588519
-				0x0383ea35}
-			0x4e5b06b1 = ((<0x38588519>).0x0383ea35)
+		if structurecontains \{structure = game_struct
+				GameVideoF}
+			MovieToPlay = ((<game_struct>).GameVideoF)
 		endif
 	elseif italian
-		if structurecontains \{structure = 0x38588519
-				0x933cf7a4}
-			0x4e5b06b1 = ((<0x38588519>).0x933cf7a4)
+		if structurecontains \{structure = game_struct
+				GameVideoI}
+			MovieToPlay = ((<game_struct>).GameVideoI)
 		endif
 	elseif german
-		if structurecontains \{structure = 0x38588519
-				0x7484daa3}
-			0x4e5b06b1 = ((<0x38588519>).0x7484daa3)
+		if structurecontains \{structure = game_struct
+				GameVideoG}
+			MovieToPlay = ((<game_struct>).GameVideoG)
 		endif
 	elseif spanish
-		if structurecontains \{structure = 0x38588519
-				0x6e5e0ede}
-			0x4e5b06b1 = ((<0x38588519>).0x6e5e0ede)
+		if structurecontains \{structure = game_struct
+				GameVideoS}
+			MovieToPlay = ((<game_struct>).GameVideoS)
 		endif
 	endif
-	return 0x4e5b06b1 = <0x4e5b06b1>
+	return MovieToPlay = <MovieToPlay>
 endscript
 
-script 0x46f3f511 
+script BX_video_preview 
 	requireparams \{[
-			0x1d991286
+			curr_game
 		]
 		all}
-	0x6e229336 0x38588519 = ($<0x1d991286>)
-	if (<0x4e5b06b1> != none)
+	BX_Get_Localized_Video_Rating game_struct = ($<curr_game>)
+	if (<MovieToPlay> != none)
 		wait \{0.35000002
 			second}
-		spawnscriptnow 0x89cb2c63 params = {0x1d991286 = <0x1d991286>}
+		spawnscriptnow BX_video_preview_rating params = {curr_game = <curr_game>}
 		wait \{4
 			second}
-		killspawnedscript \{name = 0x89cb2c63}
+		killspawnedscript \{name = BX_video_preview_rating}
 		destroyscreenelement \{id = preview_movie}
 		waitforallmoviestofinish
 	endif
@@ -700,13 +700,13 @@ script 0x46f3f511
 	setspawninstancelimits \{max = 1
 		management = kill_oldest}
 	current_menu_anchor :gettags
-	if gotparam \{0x1d991286}
+	if gotparam \{curr_game}
 		menu_music_off
 		spawnscriptnow \{bg_crowd_front_end_silence
 			params = {
 				immediate = 1
 			}}
-		if ((($<0x1d991286>).0x350839e4) = <current_preview>)
+		if ((($<curr_game>).GameVideo) = <current_preview>)
 			if screenelementexists \{id = preview_movie}
 				return
 			endif
@@ -715,7 +715,7 @@ script 0x46f3f511
 			destroyscreenelement \{id = preview_movie}
 			waitforallmoviestofinish
 			set_bink_heap_state \{state = big}
-			0x8377b203 0x38588519 = ($<0x1d991286>)
+			BX_Get_Localized_Video game_struct = ($<curr_game>)
 			createscreenelement {
 				type = movieelement
 				parent = <resolved_id>
@@ -727,10 +727,10 @@ script 0x46f3f511
 				textureslot = 1
 				texturepri = 4
 				no_hold
-				movie = <0x4e5b06b1>
+				movie = <MovieToPlay>
 				alpha = <alpha>
 			}
-			current_menu_anchor :settags current_preview = (($<0x1d991286>).0x350839e4)
+			current_menu_anchor :settags current_preview = (($<curr_game>).GameVideo)
 			begin
 			if ismovieplaying \{textureslot = 1}
 				break
@@ -742,14 +742,14 @@ script 0x46f3f511
 				time = 0.1}
 		else
 			printf \{qs(0xb0a4d5ff)
-				channel = 0x37807f54}
+				channel = DEMOLAUNCHER}
 		endif
 	endif
 endscript
 
-script 0x89cb2c63 
+script BX_video_preview_rating 
 	requireparams \{[
-			0x1d991286
+			curr_game
 		]
 		all}
 	wait \{0.35000002
@@ -757,13 +757,13 @@ script 0x89cb2c63
 	setspawninstancelimits \{max = 1
 		management = kill_oldest}
 	current_menu_anchor :gettags
-	if gotparam \{0x1d991286}
+	if gotparam \{curr_game}
 		menu_music_off
 		spawnscriptnow \{bg_crowd_front_end_silence
 			params = {
 				immediate = 1
 			}}
-		if ((($<0x1d991286>).0x350839e4) = <current_preview>)
+		if ((($<curr_game>).GameVideo) = <current_preview>)
 			if screenelementexists \{id = preview_movie}
 				return
 			endif
@@ -772,8 +772,8 @@ script 0x89cb2c63
 			destroyscreenelement \{id = preview_movie}
 			waitforallmoviestofinish
 			set_bink_heap_state \{state = big}
-			0x6e229336 0x38588519 = ($<0x1d991286>)
-			if (<0x4e5b06b1> != none)
+			BX_Get_Localized_Video_Rating game_struct = ($<curr_game>)
+			if (<MovieToPlay> != none)
 				createscreenelement {
 					type = movieelement
 					parent = <resolved_id>
@@ -785,10 +785,10 @@ script 0x89cb2c63
 					textureslot = 1
 					texturepri = 4
 					no_hold
-					movie = <0x4e5b06b1>
+					movie = <MovieToPlay>
 					alpha = <alpha>
 				}
-				current_menu_anchor :settags current_preview = (($<0x1d991286>).0x350839e4)
+				current_menu_anchor :settags current_preview = (($<curr_game>).GameVideo)
 				begin
 				if ismovieplaying \{textureslot = 1}
 					break
@@ -802,21 +802,21 @@ script 0x89cb2c63
 			waitforallmoviestofinish
 		else
 			printf \{qs(0xb0a4d5ff)
-				channel = 0x37807f54}
+				channel = DEMOLAUNCHER}
 		endif
 	endif
 endscript
 
-script 0x39b65d66 
+script BX_play_video 
 	requireparams \{[
-			0x1d991286
+			curr_game
 		]
 		all}
 	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
 	current_menu :se_setprops \{block_events}
-	killspawnedscript \{name = 0x46f3f511}
-	change \{0xf54f5034 = 1}
+	killspawnedscript \{name = BX_video_preview}
+	change \{Video_Attract_Must_Pause = 1}
 	destroyscreenelement \{id = preview_movie}
 	waitforallmoviestofinish
 	spawnscriptnow \{bg_crowd_front_end_silence
@@ -828,43 +828,43 @@ script 0x39b65d66
 		time = 0
 		z_priority = 200}
 	clean_up_user_control_helpers
-	printf qs(0x1d540dc1) a = <0x1d991286> b = (($<0x1d991286>).0x8ba1e7d9) channel = 0x37807f54
+	printf qs(0x1d540dc1) a = <curr_game> b = (($<curr_game>).ContentType) channel = DEMOLAUNCHER
 	netsessionfunc \{func = removeallcontrollers}
-	0x6e229336 0x38588519 = ($<0x1d991286>)
-	if (<0x4e5b06b1> != none)
-		playmovieandwait noblack movie = <0x4e5b06b1>
+	BX_Get_Localized_Video_Rating game_struct = ($<curr_game>)
+	if (<MovieToPlay> != none)
+		playmovieandwait noblack movie = <MovieToPlay>
 	endif
 	wait \{0.35000002
 		second}
-	0x8377b203 0x38588519 = ($<0x1d991286>)
-	playmovieandwait noblack movie = <0x4e5b06b1>
+	BX_Get_Localized_Video game_struct = ($<curr_game>)
+	playmovieandwait noblack movie = <MovieToPlay>
 	clean_up_user_control_helpers
-	destroyscreenelement \{id = 0xf08f574b}
+	destroyscreenelement \{id = helper_pills_movie_background}
 	netsessionfunc func = addcontrollers params = {controller = ($primary_controller)}
-	spawnscriptnow 0xf971ea91 params = {0x1d991286 = <0x1d991286>}
+	spawnscriptnow BX_update_helper_pills params = {curr_game = <curr_game>}
 	fadetoblack \{off
 		time = 0.2}
-	change \{0xf54f5034 = 0}
-	if (($0x05866133) = 0)
-		spawnscript 0x46f3f511 params = <...>
+	change \{Video_Attract_Must_Pause = 0}
+	if (($BX_In_Attract_Mode) = 0)
+		spawnscript BX_video_preview params = <...>
 	endif
 	current_menu :se_setprops \{unblock_events}
 endscript
 
-script 0xa7ebd1fb 
-	current = (($0x9bb9f9d7) [$0xe825afcc])
-	if ((($<current>).0x8ba1e7d9) = 0x29bd205f)
-		0x37807f54 = (($<current>).0x22d18054)
-		0x5f145430 = (($<current>).0x5f145430)
-		0xe3d77aca 0xf4514b5a = <0x37807f54> 0x5f145430 = <0x5f145430>
+script BX_start_demo_attract 
+	current = (($Launcher_Games_Array) [$Current_Attract])
+	if ((($<current>).ContentType) = demo)
+		DEMOLAUNCHER = (($<current>).DemoExec)
+		demo_index = (($<current>).demo_index)
+		do_launch_game_demo demo_title = <DEMOLAUNCHER> demo_index = <demo_index>
 	endif
 endscript
 
-script 0x5d55d294 
+script BX_start_demo 
 	gettags
-	0x37807f54 = (($<0x1d991286>).0x22d18054)
-	0x5f145430 = (($<0x1d991286>).0x5f145430)
-	0xe3d77aca 0xf4514b5a = <0x37807f54> 0x5f145430 = <0x5f145430>
+	DEMOLAUNCHER = (($<curr_game>).DemoExec)
+	demo_index = (($<curr_game>).demo_index)
+	do_launch_game_demo demo_title = <DEMOLAUNCHER> demo_index = <demo_index>
 endscript
 
 script destroy_main_menu 
@@ -872,16 +872,16 @@ script destroy_main_menu
 	destroy_viewport_ui
 endscript
 
-script 0xe3d77aca \{0xb915deae = 0}
-	if 0xdd378374 0xf4514b5a = <0xf4514b5a> 0x5f145430 = <0x5f145430>
+script do_launch_game_demo \{demo_timeout = 0}
+	if CanLaunchGameDemo demo_title = <demo_title> demo_index = <demo_index>
 		printf \{qs(0xbf2b954f)}
-		if screenelementexists \{id = 0xa73e4640}
-			destroyscreenelement \{id = 0xa73e4640}
+		if screenelementexists \{id = gh4_1_demo_mainmenu}
+			destroyscreenelement \{id = gh4_1_demo_mainmenu}
 		endif
 		wait_for_safe_shutdown
 		disable_pause
-		0x03975c29
-		if (<0x19f26901>)
+		IsEuropeBuild
+		if (<is_europe_build>)
 			legalscreen_name = 'boot_legal'
 			change \{bx_game_title = 'Greatest Hits'}
 			change \{bx_short_game_title = 'GH'}
@@ -893,10 +893,10 @@ script 0xe3d77aca \{0xb915deae = 0}
 		displayloadingscreen <legalscreen_name> spin3d_texture = 'load_wheel' spin_x = 640 spin_y = 575 scale = 0.05 localized
 		stoprendering
 		begin
-		if NOT scriptisrunning \{0x46f3f511}
+		if NOT scriptisrunning \{BX_video_preview}
 			break
 		endif
-		printf \{channel = 0x37807f54
+		printf \{channel = DEMOLAUNCHER
 			qs(0x40079dff)}
 		wait \{1
 			gameframe}
@@ -908,8 +908,8 @@ script 0xe3d77aca \{0xb915deae = 0}
 		endif
 		shutdown_game_for_signin_change \{signin_change = 0}
 		startrendering
-		printf channel = 0x37807f54 qs(0xe8082576) a = <0xf4514b5a> b = <0x5f145430> c = $0xd491a6ab
-		0xdd784604 0xf4514b5a = <0xf4514b5a> 0xb915deae = $0xd491a6ab 0x5f145430 = <0x5f145430>
+		printf channel = DEMOLAUNCHER qs(0xe8082576) a = <demo_title> b = <demo_index> c = $g_demo_timeout
+		LaunchGameDemo demo_title = <demo_title> demo_timeout = $g_demo_timeout demo_index = <demo_index>
 	endif
 endscript
 
@@ -1061,22 +1061,22 @@ script reset_character_ids
 	change \{structurename = player8_status
 		character_id = judy}
 endscript
-0x48ad7e7f = 0
-0xd491a6ab = 0
+game_array_offset = 0
+g_demo_timeout = 0
 
-script 0x3635ad90 
-	if (<0xb915deae> >= 0)
-		change 0xd491a6ab = <0xb915deae>
+script set_start_title 
+	if (<demo_timeout> >= 0)
+		change g_demo_timeout = <demo_timeout>
 	endif
-	printf channel = 0x37807f54 qs(0x49da2c48) d = <0xb915deae>
-	0x95185f8d
-	getarraysize \{$0x9bb9f9d7}
-	if gotparam \{0x5f145430}
-		if (<0x5f145430> < <array_size>)
-			printf channel = 0x37807f54 qs(0xcfdb755a) d = <0x5f145430>
-			change 0x48ad7e7f = <0x5f145430>
+	printf channel = DEMOLAUNCHER qs(0x49da2c48) d = <demo_timeout>
+	BX_SetLauncherGamesArray
+	getarraysize \{$Launcher_Games_Array}
+	if gotparam \{demo_index}
+		if (<demo_index> < <array_size>)
+			printf channel = DEMOLAUNCHER qs(0xcfdb755a) d = <demo_index>
+			change game_array_offset = <demo_index>
 		else
-			printf channel = 0x37807f54 qs(0xd4480ed5) d = <0x5f145430> a = <array_size>
+			printf channel = DEMOLAUNCHER qs(0xd4480ed5) d = <demo_index> a = <array_size>
 		endif
 	endif
 endscript

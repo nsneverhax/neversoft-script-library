@@ -22,13 +22,13 @@ default_event_handlers = [
 	}
 ]
 g_menu_colors = {
-	0x4b1beb1c = [
+	GameBox_greyed_out = [
 		128
 		128
 		128
 		255
 	]
-	0xe2b2766d = [
+	GameBox_focussed = [
 		255
 		255
 		255
@@ -76,7 +76,7 @@ g_menu_colors = {
 		19
 		255
 	]
-	0xd003083d = [
+	menu_greyed_out = [
 		110
 		100
 		90
@@ -2571,22 +2571,22 @@ script add_user_control_helper \{z = 10}
 	pos = (825.0, -77.0)
 	anchor = [left bottom]
 	alpha = 1
-	0x8cf6425d = 1
-	0x11edf79a = [left center]
-	if gotparam \{0xa84b9c8b}
-		pos = <0xa84b9c8b>
+	body_alpha = 1
+	justify = [left center]
+	if gotparam \{override_pos_to}
+		pos = <override_pos_to>
 	endif
-	if gotparam \{0x9cd7d4d7}
-		anchor = <0x9cd7d4d7>
+	if gotparam \{override_anchor_to}
+		anchor = <override_anchor_to>
 	endif
-	if gotparam \{0xe05089b2}
-		alpha = <0xe05089b2>
+	if gotparam \{override_alpha_to}
+		alpha = <override_alpha_to>
 	endif
-	if gotparam \{0xdfe0a18c}
-		0x8cf6425d = <0xdfe0a18c>
+	if gotparam \{override_body_alpha_to}
+		body_alpha = <override_body_alpha_to>
 	endif
-	if gotparam \{0x94d84c86}
-		0x11edf79a = <0x94d84c86>
+	if gotparam \{override_justify_to}
+		justify = <override_justify_to>
 	endif
 	if NOT screenelementexists \{id = user_control_container}
 		createscreenelement {
@@ -2598,8 +2598,8 @@ script add_user_control_helper \{z = 10}
 			pos = <pos>
 			pos_anchor = <anchor>
 			alpha = <alpha>
-			just = <0x11edf79a>
-			internal_just = <0x11edf79a>
+			just = <justify>
+			internal_just = <justify>
 			isvertical = false
 			fit_major = `fit content if larger`
 			fit_minor = `keep dims`
@@ -2651,7 +2651,7 @@ script add_user_control_helper \{z = 10}
 	}
 	user_control_container :se_getprops
 	user_control_container :se_setprops {
-		0xd5bb1655 = <0x8cf6425d>
+		helper_pill_body_alpha = <body_alpha>
 		helper_pill_body_dims = (((1.0, 0.0) * <helper_pill_menu_dims> [0]) + (0.0, 50.0))
 	}
 	if (<helper_pill_menu_dims> [0] > 950)

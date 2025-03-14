@@ -139,7 +139,7 @@ script ui_boot_iis_attract_wait
 	wait_time = ($attract_wait_time)
 	begin
 	printf qs(0x1ef1103f) i = <wait_time> channel = attract
-	if ($0x9cf507d8 = 0)
+	if ($in_demo_marketing_sequence = 0)
 		if (<wait_time> = 1)
 			wait \{0.5
 				seconds

@@ -725,21 +725,21 @@ script playmovieandwait
 				pad_start
 				endmovie
 				params = {
-					0x2336b6af = 1
+					Interrupted = 1
 				}
 			}
 			{
 				pad_back
 				endmovie
 				params = {
-					0x2336b6af = 1
+					Interrupted = 1
 				}
 			}
 			{
 				pad_choose
 				endmovie
 				params = {
-					0x2336b6af = 1
+					Interrupted = 1
 				}
 			}
 		]}
@@ -785,7 +785,7 @@ script endmovie
 	if screenelementexists \{id = movie_handler}
 		movie_handler :die
 	endif
-	if gotparam \{0x2336b6af}
-		change 0x268807fc = <0x2336b6af>
+	if gotparam \{Interrupted}
+		change BX_Attract_Interrupted = <Interrupted>
 	endif
 endscript
