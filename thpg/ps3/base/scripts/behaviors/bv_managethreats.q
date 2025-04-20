@@ -1,0 +1,3 @@
+
+script RegisterBehaviors_ManageThreats 
+endscript
